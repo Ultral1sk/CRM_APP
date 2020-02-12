@@ -11,7 +11,7 @@ connectDB();
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 
-app.use('/api/dashboard', require('./router/home'));
+app.use('/api/home', require('./router/home'));
 app.use('/api/auth', require('./router/auth'));
 
 //server port loader
