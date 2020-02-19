@@ -4,20 +4,27 @@ import signinimage from "./images/signin-image.jpg";
 import axios from "axios";
 
 import { Link } from "react-router-dom";
-const Signin = props => {
+
+
+const Login = props => {
+
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   //const [state, setstate] = useState("")
   const submitHandler = e => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/auth/login", { email, pass })
+      .post("http://localhost:5001/api/auth/login", { email, pass })
 
       .then(res => {
         if (res.data.token) {
           props.setLoginstatus(true);
           localStorage.setItem("token", res.data.token);
+          console.log(res, res.data.message,res.data.token, res.data.status);
+
+          
         } else {
+          // deleting the token 
           props.setLoginstatus(false);
           localStorage.setItem("token", "");
 
@@ -133,4 +140,4 @@ const Signin = props => {
   );
 };
 
-export default Signin;
+export default Login;

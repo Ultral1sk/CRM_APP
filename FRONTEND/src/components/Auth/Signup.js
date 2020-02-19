@@ -3,14 +3,14 @@ import "./css/style.css";
 import signupimage from "./images/signup-image.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios";
-const Signup = () => {
+const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const submitHandler = e => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/auth/register", {
+      .post("http://localhost:5001/api/auth/register", {
         email,
         pass,
         name
@@ -120,4 +120,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Register;

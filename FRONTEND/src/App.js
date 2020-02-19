@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
-import Signup from "./components/Auth/Signup";
-import Signin from "./components/Auth/Signin";
+import Register from "./components/Auth/Signup";
+import Login from "./components/Auth/Signin";
 import { Switch, Route } from "react-router-dom";
 import Dashboard from "./components/dashboard";
 
@@ -13,11 +13,11 @@ const App = () => {
       <Switch>
         {!loginstatus ? (
           <>
-            <Route path="/signup">
-              <Signup />
+            <Route path="/register">
+              <Register />
             </Route>
             <Route path="/">
-              <Signin setLoginstatus={setLoginstatus} />
+              <Login setLoginstatus={setLoginstatus} />
             </Route>
           </>
         ) : (
